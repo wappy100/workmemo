@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  #get 'memos' => 'memos#index'
+  #get 'memos/new' => 'memos#new'
+  resources :memos
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

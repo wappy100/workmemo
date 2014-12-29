@@ -1,0 +1,19 @@
+<div class='container'>
+  <h2>一覧</h2>
+
+<% @memos.each do |memo| %> 
+  <div class='title'>
+    <h1><%= memo.title %></h1>
+  </div>
+
+  <div class='memotitle'>
+  </div>
+  <div class='detail'>
+  </div>
+
+<% end %>
+
+  <div class='new'>
+    <%= link_to "新規作成", '/memos/new' %>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class='container'>
+  <h2>詳細</h2>
+
+  <div class='title'>
+    title:<%= @memo.title %>
+  </div>
+
+  <% @memo.detail.each do |d| %>
+  <div class='subtitle'>
+    memotitle:<%= d.memotitle %>
+  </div>
+  <div class='detail'>
+    detail:<%= d.detail %></br></br>
+  </div>
+  <% end %>
+</div>

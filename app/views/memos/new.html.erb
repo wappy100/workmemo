@@ -1,0 +1,18 @@
+<div class='container'>
+  <h2>新規登録</h2>
+
+<%= form_for @memo do |f| %> 
+  <div class='title'>
+    <%= f.label :title, "title" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <%= f.fields_for :detail do |detail| %>
+    <%= render "detail", f: detail %>
+  <% end %>
+  <%= link_to_add_fields "手順追加", f, :detail %></br>
+
+  <%= f.submit "登録" %>
+
+<% end %>
+</div>
