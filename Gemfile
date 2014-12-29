@@ -39,3 +39,5 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'jquery-turbolinks'
+gem 'twitter-bootstrap3-rails'
+

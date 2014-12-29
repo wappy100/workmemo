@@ -1,19 +1,44 @@
-<div class='container'>
-  <h2>一覧</h2>
+<div id='wrapperBox'>
+<div id='headerBox'>
+header
+</div>
+<div id='navigateBox'>
+navigate
+</div>
 
-<% @memos.each do |memo| %> 
-  <div class='title'>
-    <h1><%= memo.title %></h1>
+<div id='containerBox'>
+  <div id='mainBox'>
+    <%# ここでajax render %>
+    <%#= render "show", f: detail %>
+    <% @memos.each do |memo| %> 
+      <h1><%= memo.title %></h1>
+    <% end %>
+    <div class='new'>
+      <%= link_to "新規作成", '/memos/new' %>
+    </div>
   </div>
 
-  <div class='memotitle'>
+  <div id='subBox'>
+    <section>
+    <p>メモリスト</p>
+    <ul>
+      <% @memos.each do |memo| %>
+      <li>
+        <%= memo.title %>
+        <ul>
+          <% memo.detail.each do |detail| %>
+            <li><%= link_to detail.memotitle, memo_path(memo, detail) %></li>
+          <% end %>
+        </ul>
+      </li>
+      <% end %>
+    </ul>
+    </section>
   </div>
-  <div class='detail'>
-  </div>
+</div>
 
-<% end %>
+<div id='footerBox'>
+footer
+</div>
 
-  <div class='new'>
-    <%= link_to "新規作成", '/memos/new' %>
-  </div>
 </div>
